@@ -22,6 +22,22 @@ export default function Mybook(props) {
   function handleAddClick() {
     navigate(`/createbook`);
   }
+  async function handleDeleteClick(key) {
+    const DOMAIN = "http://localhost:8000";
+    const response = await fetch(`${DOMAIN}/api/deletebook/${key}`, {
+      method: "DELETE",
+    });
+
+    const data = await response.json();
+
+    console.log(data.data);
+
+    if (!response.ok) {
+      throw new Error(data.message || "Could not delete Book.");
+    } else {
+      navigate("/");
+    }
+  }
   //   console.log(props.data[0]);
   return (
     <div className={classes.container}>
@@ -41,6 +57,7 @@ export default function Mybook(props) {
             book={book}
             clickhandler={handleClick}
             edithandler={handleEditClick}
+            deletehandler={handleDeleteClick}
             img={book1}
             author={book.authorName}
             title={book.title}

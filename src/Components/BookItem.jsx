@@ -9,6 +9,11 @@ export function BookItem(props) {
   function edithandler() {
     props.edithandler(props.book.id);
   }
+
+  function deletehandler() {
+    props.deletehandler(props.book.id);
+  }
+
   return (
     <div className={classes.card}>
       <img className={classes.img} src={props.img} />
@@ -31,6 +36,11 @@ export function BookItem(props) {
         {props.user == "Author" && (
           <button className={classes.button} onClick={edithandler}>
             Edit
+          </button>
+        )}
+        {props.user == "Author" && (
+          <button className={classes.button1} onClick={deletehandler}>
+            Delete
           </button>
         )}
       </div>
