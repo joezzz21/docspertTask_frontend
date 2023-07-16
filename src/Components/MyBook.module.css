@@ -1,0 +1,33 @@
+.container {
+  list-style: none;
+  max-width: 70vw;
+  /* background-color: black; */
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  margin: 1rem auto;
+  padding: 1rem 0;
+  display: list-item;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: center;
+}
+
+.text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 1em;
+  color: #543280;
+  padding-top: 2rem;
+  text-align: start;
+}
+
+.button {
+  margin-left: 20em;
+  background-color: rgba(33, 82, 119);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 25%;
+  height: 20%;
+  border-radius: 8px;
+}

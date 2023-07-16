@@ -1,0 +1,39 @@
+.navbar {
+  background-color: rgba(33, 82, 119);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.navbar li {
+  margin-right: 1rem;
+}
+.navbar p {
+  color: white;
+  margin-right: 30em;
+  margin-top: 0;
+  text-decoration: none;
+}
+
+.navbar a {
+  color: white;
+  margin-right: 5em;
+  text-decoration: none;
+}
+
+.navbar button {
+  width: 10em;
+  border-radius: 10px;
+  color: white;
+  margin-right: 1rem;
+  background-color: transparent;
+  text-decoration: none;
+}

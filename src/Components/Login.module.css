@@ -1,0 +1,42 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  /* background-color: #9c7eee; */
+  /* list-style: none; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40em;
+  height: 30em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.username {
+  width: 30%;
+  border-radius: 10px;
+  height: 5%;
+  margin: 1em;
+}
+
+.password {
+  width: 30%;
+  height: 5%;
+  border-radius: 10px;
+  margin: 1em;
+}
+
+.button {
+  width: 20%;
+  height: 10%;
+  background-color: rgba(33, 82, 119);
+  color: white;
+  border-radius: 10px;
+}

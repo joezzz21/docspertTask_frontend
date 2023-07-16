@@ -1,0 +1,38 @@
+.container {
+  list-style: none;
+  display: list-item;
+}
+
+.card {
+  /* background-color: #9c7eee; */
+  /* list-style: none; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 5em;
+  min-height: 5em;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); */
+}
+
+.author {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #543280;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.text {
+  white-space: pre-wrap;
+  font-size: 1.25rem;
+  margin: 0.25rem 0 0 0;
+  color: #593884;
+  font-style: italic;
+  text-align: center;
+}
+
+.img {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+}
