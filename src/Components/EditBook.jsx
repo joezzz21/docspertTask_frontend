@@ -57,8 +57,8 @@ function EditBook(props) {
         <modal className={classes.container}>
           <form onSubmit={updateBook} className={classes.card} method="PUT">
             <h1>Edit Book</h1>
-            <div>
-              <label>Title</label>
+            <div className={classes.div}>
+              <label className={classes.label}>Title</label>
               <input
                 type="text"
                 name="title"
@@ -69,16 +69,23 @@ function EditBook(props) {
               />
             </div>
 
-            <div>
-              <label>Description</label>
-              <input
+            <div className={classes.div}>
+              <label className={classes.label}>Description</label>
+              <textarea
                 className={classes.description}
+                name="description"
+                placeholder="Enter Description"
+                required
+              >
+                {book.description}
+              </textarea>
+              {/* className={classes.description}
                 type="text"
                 defaultValue={book.description}
                 name="description"
                 required
                 placeholder="Enter Description"
-              />
+              /> */}
             </div>
 
             <input type="submit" className={classes.button} />
