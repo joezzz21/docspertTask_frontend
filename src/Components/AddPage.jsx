@@ -44,7 +44,7 @@ function AddPage(props) {
           <h1>Create Page</h1>
           <div className={classes.div}>
             <label className={classes.label}>Page Text</label>
-            <input
+            <textarea
               className={classes.description}
               type="text"
               name="description"
