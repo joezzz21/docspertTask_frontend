@@ -27,6 +27,29 @@
   border-radius: 8px;
 }
 
+.formbutton {
+  margin: 1em;
+  background-color: rgba(33, 82, 119);
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 20%;
+  height: 5%;
+  border-radius: 8px;
+}
+
+.button1 {
+  margin-left: 1em;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 20%;
+  height: 5%;
+  border-radius: 8px;
+}
+
 .text {
   white-space: pre-wrap;
   font-size: 1.25rem;
@@ -35,6 +58,18 @@
   margin: 1.3em;
   color: black;
   font-style: normal;
+}
+
+.textedit {
+  white-space: pre-wrap;
+  font-size: 1.25rem;
+  text-indent: 70px;
+  text-align: justify;
+  margin: 1.3em;
+  color: black;
+  font-style: normal;
+  width: 50em;
+  height: 50em;
 }
 
 .number {

@@ -12,7 +12,7 @@ export default function Mybook(props) {
   const navigate = useNavigate();
 
   function handleClick(key) {
-    navigate(`/book/${key}`);
+    navigate(`/book/${key}`, { state: { user: "Author" } });
   }
 
   function handleEditClick(key) {

@@ -31,11 +31,11 @@ export function BookItem(props) {
           {props.description}
         </p>
         <button className={classes.button} onClick={handler}>
-          Read
+          {props.user == "Author" ? "Edit pages" : "Read"}
         </button>
         {props.user == "Author" && (
           <button className={classes.button} onClick={edithandler}>
-            Edit
+            Edit Book
           </button>
         )}
         {props.user == "Author" && (

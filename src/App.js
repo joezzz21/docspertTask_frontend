@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import MyBooks from "./pages/MyBooks";
 import EditBook from "./Components/EditBook";
 import AddBook from "./Components/AddBook";
+import AddPage from "./Components/AddPage";
 
 function App(props) {
   // const bookid = useParams();
@@ -49,6 +50,14 @@ function App(props) {
                 </PrivateRoute>
               }
               path="/createbook"
+            />
+            <Route
+              element={
+                <PrivateRoute>
+                  <AddPage />
+                </PrivateRoute>
+              }
+              path="/createPage"
             />
           </Routes>
         </AuthProvider>
