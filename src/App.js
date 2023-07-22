@@ -10,6 +10,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import { AuthProvider } from "./context/AuthContext";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import MyBooks from "./pages/MyBooks";
 import EditBook from "./Components/EditBook";
 import AddBook from "./Components/AddBook";
@@ -25,6 +26,7 @@ function App(props) {
           <Routes>
             <Route element={<HomePage />} path="/" exact />
             <Route element={<LoginPage />} path="/login" />
+            <Route element={<RegisterPage />} path="/register" />
             <Route element={<Page />} path="/book/:bookid" />
             {/* <Route element={<MyBooks />} path="/books/:userid" /> */}
             <Route

@@ -6,7 +6,10 @@
   align-items: center;
 }
 .div {
-  width: 100em;
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+  /* background-color: black; */
 }
 
 .card {
@@ -42,4 +45,8 @@
   background-color: rgba(33, 82, 119);
   color: white;
   border-radius: 10px;
+}
+
+.label {
+  margin-left: 1em;
 }

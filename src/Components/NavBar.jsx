@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import "./NavBar.css";
 
@@ -9,6 +9,10 @@ function Navbar() {
 
   function handler() {
     navigate("/login");
+  }
+
+  function handler1() {
+    navigate("/register");
   }
 
   return (
@@ -26,7 +30,10 @@ function Navbar() {
           {user ? (
             <button onClick={logoutUser}>Logout</button>
           ) : (
-            <button onClick={handler}>Login</button>
+            <>
+              <button onClick={handler}>Login</button>
+              <button onClick={handler1}>Register</button>
+            </>
           )}
         </li>
       </ul>

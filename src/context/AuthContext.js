@@ -23,30 +23,13 @@ export const AuthProvider = ({ children }) => {
 
   const navigate = useNavigate();
 
-  let loginUser = async (e) => {
+  let loginUser = (data) => {
     setLoading(true);
-    e.preventDefault();
-    let response = await fetch("http://localhost:8000/api/token/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: e.target.username.value,
-        password: e.target.password.value,
-      }),
-    });
-    let data = await response.json();
 
-    if (response.status === 200) {
-      setAuthTokens(data);
-      setUser(jwt_decode(data.access));
-      localStorage.setItem("authTokens", JSON.stringify(data));
-      navigate("/");
-    } else {
-      alert("Wrong username or password");
-      navigate("/login");
-    }
+    setAuthTokens(data);
+    setUser(jwt_decode(data.access));
+    localStorage.setItem("authTokens", JSON.stringify(data));
+    navigate("/");
   };
 
   let logoutUser = () => {

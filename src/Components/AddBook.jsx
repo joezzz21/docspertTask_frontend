@@ -38,8 +38,8 @@ function AddBook(props) {
       <modal className={classes.container}>
         <form onSubmit={addBook} className={classes.card} method="POST">
           <h1>Create Book</h1>
-          <div>
-            <label>Title</label>
+          <div className={classes.div}>
+            <label className={classes.label}>Title</label>
             <input
               type="text"
               name="title"
@@ -49,9 +49,9 @@ function AddBook(props) {
             />
           </div>
 
-          <div>
-            <label>Description</label>
-            <input
+          <div className={classes.div}>
+            <label className={classes.label}>Description</label>
+            <textarea
               className={classes.description}
               type="text"
               name="description"
