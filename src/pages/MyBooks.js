@@ -4,13 +4,19 @@ import AuthContext from "../context/AuthContext";
 
 function MyBooks() {
   const [books, setBooks] = useState(null);
-  let { user } = useContext(AuthContext);
+  let { user, authTokens } = useContext(AuthContext);
   console.log(user);
 
   useEffect(() => {
     async function getMyBooks() {
       const DOMAIN = "http://localhost:8000";
-      const response = await fetch(`${DOMAIN}/api/books/${user.user_id}`);
+      const response = await fetch(`${DOMAIN}/api/books/`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + authTokens.access,
+        },
+      });
 
       const data = await response.json();
 

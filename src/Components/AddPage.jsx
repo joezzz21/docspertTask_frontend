@@ -7,7 +7,7 @@ function AddPage(props) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  let { user } = useContext(AuthContext);
+  let { user, authTokens } = useContext(AuthContext);
 
   async function addPage(e) {
     e.preventDefault();
@@ -19,6 +19,7 @@ function AddPage(props) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: "Bearer " + authTokens.access,
         },
         body: JSON.stringify({
           text: e.target.description.value,

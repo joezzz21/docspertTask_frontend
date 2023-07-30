@@ -11,7 +11,7 @@ function Page(props) {
 
   const location = useLocation();
   const navigate = useNavigate();
-  let { user } = useContext(AuthContext);
+  let { user, authTokens } = useContext(AuthContext);
 
   function createPage() {
     navigate("/createpage", { state: { book: currentPage.book } });
@@ -65,6 +65,7 @@ function Page(props) {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + authTokens.access,
       },
       body: JSON.stringify({
         text: e.target.editablepage.value,
@@ -89,6 +90,10 @@ function Page(props) {
     const DOMAIN = "http://localhost:8000";
     const response = await fetch(`${DOMAIN}/api/deletepage/${currentPage.id}`, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + authTokens.access,
+      },
     });
     console.log(response);
     const data = await response.json();

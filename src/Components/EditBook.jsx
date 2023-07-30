@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import classes from "./EditBook.module.css";
 import { useParams, useNavigate } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 
 function EditBook(props) {
   const [book, setBook] = useState();
   const id = useParams();
   const navigate = useNavigate();
+  let { authTokens } = useContext(AuthContext);
 
   async function updateBook(e) {
     e.preventDefault();
@@ -15,6 +17,7 @@ function EditBook(props) {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + authTokens.access,
       },
       body: JSON.stringify({
         title: e.target.title.value,

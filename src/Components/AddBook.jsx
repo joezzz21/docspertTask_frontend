@@ -5,16 +5,17 @@ import AuthContext from "../context/AuthContext";
 
 function AddBook(props) {
   const navigate = useNavigate();
-  let { user } = useContext(AuthContext);
+  let { user, authTokens } = useContext(AuthContext);
 
   async function addBook(e) {
     e.preventDefault();
     console.log(e);
     const DOMAIN = "http://localhost:8000";
-    const response = await fetch(`${DOMAIN}/api/createbook/${user.user_id}`, {
+    const response = await fetch(`${DOMAIN}/api/createbook/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + authTokens.access,
       },
       body: JSON.stringify({
         title: e.target.title.value,

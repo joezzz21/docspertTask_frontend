@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import classes from "./MyBook.module.css";
 import { BookItem } from "./BookItem";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 import book1 from "../static/book_1.jpg";
 import book2 from "../static/book_2.jpg";
 import book3 from "../static/book_3.jpg";
@@ -10,6 +11,7 @@ import book5 from "../static/book_5.jpg";
 
 export default function Mybook(props) {
   const navigate = useNavigate();
+  let { authTokens } = useContext(AuthContext);
 
   function handleClick(key) {
     navigate(`/book/${key}`, { state: { user: "Author" } });
@@ -26,6 +28,10 @@ export default function Mybook(props) {
     const DOMAIN = "http://localhost:8000";
     const response = await fetch(`${DOMAIN}/api/deletebook/${key}`, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + authTokens.access,
+      },
     });
 
     const data = await response.json();
